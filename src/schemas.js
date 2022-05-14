@@ -35,9 +35,8 @@ const schema = new GraphQLSchema({
                     if (!args) {
                         return elements;
                     }
-                    for (const [filterKey, filterValue] of Object.entries(args)) {
-                        console.log(filterKey, filterValue);
-                        elements = elements.filter((el) => filterElement(el, filterKey, filterValue));
+                    for (const [fieldName, filterInput] of Object.entries(args)) {
+                        elements = elements.filter((el) => filterElement(el, fieldName, filterInput));
                     }
                     return elements;
                 }

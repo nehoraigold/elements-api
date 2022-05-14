@@ -75,11 +75,12 @@ describe("application", () => {
         Object.entries(TEST_ELEMENT).forEach(([field, value]) => {
             it(`should allow filtering by ${field}`, async () => {
                 // arrange
-                value = typeof value === "string" ? `"${value}"` : value;
-                const body = { query: `{ elements(${field}:${value}) { atomicNumber } }` };
+                const valueType = typeof value;
+                const filterWord = valueType === "string" ? "is" : "equals";
+                const query = `{ elements(${field}: { ${filterWord}: ${valueType === "string" ? `"${value}"` : value} }) { atomicNumber } }`;
 
                 // act
-                const { body: { data } } = await sendRequestWithBody(body);
+                const { body: { data } } = await sendRequestWithBody({ query });
 
                 // assert
                 expect(data.elements).to.have.length.greaterThan(0);

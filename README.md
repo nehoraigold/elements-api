@@ -25,20 +25,22 @@ that contains the field `query`. The query should be a valid GraphQL string. See
 
 ```graphql
 {
-    elements(name:"Gold") {
+    elements(name: { is: "Gold" }) {
         electronConfiguration
     }
 }
 ```
 
-**Example #3**: Get the names and group blocks of all elements that are gaseous at room temperature.
+**Example #3**: Get the names and electronegativities of all d-block elements with an atomic mass between 100 and 200.
 
 ```graphql
 {
-    elements(standardState:"gas") {
+    elements(
+        atomicMass: { between: [100, 200] },
+        block: { is: "d" }
+    ) {
         name
-        groupBlock
-        
+        electronegativity
     }
 }
 ```
