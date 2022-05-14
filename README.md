@@ -58,7 +58,7 @@ that contains the field `query`. The query should be a valid GraphQL string. See
 | `vanDerWaalsRadius` | number | 120 |  |
 | `ionizationEnergy` | number | 1312 |  |
 | `electronAffinity` | number | -73 |  |
-| `oxidationStates` | object | -1,1 |  |
+| `oxidationStates` | array | [-1,1] |  |
 | `standardState` | string | gas |  |
 | `bondingType` | string | diatomic |  |
 | `meltingPoint` | number | 14 |  |

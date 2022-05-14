@@ -16,10 +16,11 @@ function main() {
 function createFieldArrayBasedOnElementWithIndex(index) {
     return Object.entries(elements[index])
         .map(([field, value]) => {
+            const type = typeof value;
             return {
                 name: field,
                 example: value,
-                type: typeof value,
+                type: type === "object" ? Array.isArray(value) ? "array" : type : type,
                 required: true
             }
         });
@@ -45,7 +46,7 @@ function convertArrayToReadmeTable(fieldArray) {
 }
 
 function buildRow({ name, example, type, required}) {
-    return `| \`${name}\` | ${type} | ${example} | ${required ? ":heavy_check_mark:" : ""} |`;
+    return `| \`${name}\` | ${type} | ${Array.isArray(example) ? `[${example}]` : example} | ${required ? ":heavy_check_mark:" : ""} |`;
 }
 
 function updateReadmeFile(table) {
