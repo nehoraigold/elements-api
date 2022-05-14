@@ -46,31 +46,8 @@ that contains the field `query`. The query should be a valid GraphQL string. See
 ```
 
 ## All Element Fields
-
 | Name | Type | Example | Required |
 | :--- | :--- | :--- | :--- |
-| `atomicNumber` | number | 1 | :heavy_check_mark: |
-| `symbol` | string | H | :heavy_check_mark: |
-| `name` | string | Hydrogen | :heavy_check_mark: |
-| `atomicMass` | number | 1.00794 | :heavy_check_mark: |
-| `electronicConfiguration` | string | 1s1 | :heavy_check_mark: |
-| `electronegativity` | number | 2.2 |  |
-| `atomicRadius` | number | 37 |  |
-| `vanDerWaalsRadius` | number | 120 |  |
-| `ionizationEnergy` | number | 1312 |  |
-| `electronAffinity` | number | -73 |  |
-| `oxidationStates` | object | -1,1 |  |
-| `standardState` | string | gas |  |
-| `bondingType` | string | diatomic |  |
-| `meltingPoint` | number | 14 |  |
-| `boilingPoint` | number | 20 |  |
-| `density` | number | 0.0000899 |  |
-| `groupBlock` | string | nonmetal | :heavy_check_mark: |
-| `yearDiscovered` | string | 1766 | :heavy_check_mark: |
-| `block` | string | s | :heavy_check_mark: |
-| `cpkHexColor` | string | FFFFFF |  |
-| `period` | number | 1 | :heavy_check_mark: |
-| `group` | number | 1 | :heavy_check_mark: | :--- | :--- |
 | `atomicNumber` | number | 1 | :heavy_check_mark: |
 | `symbol` | string | H | :heavy_check_mark: |
 | `name` | string | Hydrogen | :heavy_check_mark: |

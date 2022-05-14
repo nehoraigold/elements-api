@@ -50,8 +50,8 @@ function buildRow({ name, example, type, required}) {
 
 function updateReadmeFile(table) {
     const readme = readFileSync(README_PATH, 'utf8');
-    const startReplaceIndex = readme.indexOf(README_FIELDS_HEADER) + README_FIELDS_HEADER.length + '\n\n'.length;
-    const endReplaceIndex = readme.substring(startReplaceIndex).search(/\n[^|]/) + '\n'.length;
+    const startReplaceIndex = readme.indexOf(README_FIELDS_HEADER) + README_FIELDS_HEADER.length + "\n".length;
+    const endReplaceIndex = startReplaceIndex + readme.substring(startReplaceIndex).search(/\n[^|]/);
     const newReadme = readme.substring(0, startReplaceIndex) + table + readme.substring(endReplaceIndex);
     writeFileSync(README_PATH, newReadme);
 }
