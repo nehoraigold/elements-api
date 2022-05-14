@@ -10,7 +10,8 @@ function createNewApp() {
         '/graphql',
         graphqlHTTP({
             schema,
-            rootValue: { elements }
+            rootValue: { elements },
+            graphiql: false
         })
     );
     return app;
