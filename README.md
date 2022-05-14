@@ -45,6 +45,78 @@ that contains the field `query`. The query should be a valid GraphQL string. See
 }
 ```
 
+## All Element Fields
+
+| Name | Type | Example | Required |
+| :--- | :--- | :--- | :--- |
+| `atomicNumber` | number | 1 | :heavy_check_mark: |
+| `symbol` | string | H | :heavy_check_mark: |
+| `name` | string | Hydrogen | :heavy_check_mark: |
+| `atomicMass` | number | 1.00794 | :heavy_check_mark: |
+| `electronicConfiguration` | string | 1s1 | :heavy_check_mark: |
+| `electronegativity` | number | 2.2 |  |
+| `atomicRadius` | number | 37 |  |
+| `vanDerWaalsRadius` | number | 120 |  |
+| `ionizationEnergy` | number | 1312 |  |
+| `electronAffinity` | number | -73 |  |
+| `oxidationStates` | object | -1,1 |  |
+| `standardState` | string | gas |  |
+| `bondingType` | string | diatomic |  |
+| `meltingPoint` | number | 14 |  |
+| `boilingPoint` | number | 20 |  |
+| `density` | number | 0.0000899 |  |
+| `groupBlock` | string | nonmetal | :heavy_check_mark: |
+| `yearDiscovered` | string | 1766 | :heavy_check_mark: |
+| `block` | string | s | :heavy_check_mark: |
+| `cpkHexColor` | string | FFFFFF |  |
+| `period` | number | 1 | :heavy_check_mark: |
+| `group` | number | 1 | :heavy_check_mark: | :--- | :--- |
+| `atomicNumber` | number | 1 | :heavy_check_mark: |
+| `symbol` | string | H | :heavy_check_mark: |
+| `name` | string | Hydrogen | :heavy_check_mark: |
+| `atomicMass` | number | 1.00794 | :heavy_check_mark: |
+| `electronicConfiguration` | string | 1s1 | :heavy_check_mark: |
+| `electronegativity` | number | 2.2 |  |
+| `atomicRadius` | number | 37 |  |
+| `vanDerWaalsRadius` | number | 120 |  |
+| `ionizationEnergy` | number | 1312 |  |
+| `electronAffinity` | number | -73 |  |
+| `oxidationStates` | object | -1,1 |  |
+| `standardState` | string | gas |  |
+| `bondingType` | string | diatomic |  |
+| `meltingPoint` | number | 14 |  |
+| `boilingPoint` | number | 20 |  |
+| `density` | number | 0.0000899 |  |
+| `groupBlock` | string | nonmetal | :heavy_check_mark: |
+| `yearDiscovered` | string | 1766 | :heavy_check_mark: |
+| `block` | string | s | :heavy_check_mark: |
+| `cpkHexColor` | string | FFFFFF |  |
+| `period` | number | 1 | :heavy_check_mark: |
+| `group` | number | 1 | :heavy_check_mark: |
+
+## Filters
+
+### String Filter Inputs
+
+| Type | Description | Example |
+|:---   |:---    |:---  |
+| `is` | Matches exactly, case-insensitive | `elements(symbol: { is: "He" }) { ... }` |
+| `includes` | The string is present anywhere, case-insensitive | `elements(name: { includes: "ium" }) { ... }` |
+| `excludes` | The string is not present anywhere, case-insensitive | `elements(electronConfiguration: { excludes: "p5" }) { ... }` |
+
+
+### Number Filter Inputs
+
+| Type | Description | Example |
+|:---   | :---    | :---  |
+| `gt` | Greater than | `elements(atomicNumber: { gt: 100 }) { ... }` |
+| `ge` | Greater than or equal to | `elements(atomicNumber: { ge: 101 }) { ... }` |
+| `equals` | Equals exactly | `elements(atomicNumber: { equals: 1 }) { ... }` |
+| `le` | Less than or equal to | `elements(meltingPoint: { le: 0 }) { ... }` |
+| `lt` | Less than | `elements(boilingPoint: { lt: 100 }) { ... }` |
+| `between` | In between the two provided numbers in the form of [lower, higher] and including both | `elements(boilingPoint: { between: [0, 100] }) { ... }` |
+| `approximately` | Approximately equal to a given value plus a margin of error in the form of [targetValue, margin] | `elements(atomicMass: { approximately: [16, 0.5] }) { ... }` |
+
 ## Running the App
 
 1. Clone the repository.
