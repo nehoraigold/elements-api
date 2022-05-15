@@ -77,10 +77,12 @@ that contains the field `query`. The query should be a valid GraphQL string. See
 
 | Type | Description | Example |
 |:---   |:---    |:---  |
-| `is` | Matches exactly, case-insensitive | `elements(symbol: { is: "He" }) { ... }` |
-| `includes` | The string is present anywhere, case-insensitive | `elements(name: { includes: "ium" }) { ... }` |
-| `excludes` | The string is not present anywhere, case-insensitive | `elements(electronConfiguration: { excludes: "p5" }) { ... }` |
+| `is` | The string matches | `elements(symbol: { is: "He" }) { ... }` |
+| `in` | The string matches one of the provided strings | `elements(standardState: { in: ["liquid", "gas"] }) { ... }` |
+| `includes` | The string is present anywhere | `elements(name: { includes: "ium" }) { ... }` |
+| `excludes` | The string is not present anywhere | `elements(electronConfiguration: { excludes: "p5" }) { ... }` |
 
+> Note: All string comparisons are case-insensitive.
 
 ### Number Filter Inputs
 

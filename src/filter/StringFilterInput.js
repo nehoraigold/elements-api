@@ -1,4 +1,4 @@
-const { GraphQLInputObjectType, GraphQLString } = require("graphql");
+const { GraphQLInputObjectType, GraphQLString, GraphQLList } = require("graphql");
 const { FilterType } = require("./FilterType");
 
 
@@ -14,6 +14,9 @@ const StringFilterInput = new GraphQLInputObjectType({
         },
         [FilterType.EXCLUDES]: {
             type: GraphQLString
+        },
+        [FilterType.IN]: {
+            type: new GraphQLList(GraphQLString)
         }
     }
 });

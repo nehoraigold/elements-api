@@ -45,4 +45,4 @@ const schema = new GraphQLSchema({
     })
 });
 
-module.exports = { schema, ElementFieldTypes };
+module.exports = { schema };

@@ -8,7 +8,8 @@ const FilterType = {
     APPROXIMATELY: "approximately",
     IS: "is",
     INCLUDES: "includes",
-    EXCLUDES: "excludes"
+    EXCLUDES: "excludes",
+    IN: "in"
 };
 
 module.exports = { FilterType };
